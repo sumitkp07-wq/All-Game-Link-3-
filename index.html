@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popular Viral Games - Download Center</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    body {
+      background-color: #060913;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(220, 38, 38, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.3) 0%, transparent 50%);
+      background-attachment: fixed;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      padding: 20px 14px 40px;
+    }
+    .wrapper {
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: #34d399;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #34d399;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      background: linear-gradient(180deg, #ffffff 30%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .tagline {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-bottom: 18px;
+    }
+    .search-box {
+      margin-bottom: 22px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(15, 23, 42, 0.7);
+      color: #fff;
+      font-size: 13px;
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    }
+    .games-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .game-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    .game-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      flex: 1;
+      min-width: 0;
+    }
+    .game-thumb {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 1.5px solid #3b82f6;
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+      flex-shrink: 0;
+      background: #000;
+    }
+    .game-meta {
+      overflow: hidden;
+    }
+    .game-meta h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .game-meta p {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 3px;
+    }
+    .stars {
+      color: #f59e0b;
+      font-size: 10px;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+    .btn-download {
+      background: linear-gradient(90deg, #ef4444, #3b82f6);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 10px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      transition: transform 0.1s ease;
+      flex-shrink: 0;
+    }
+    .btn-download:active {
+      transform: scale(0.96);
+    }
+    .footer-note {
+      font-size: 10px;
+      color: #475569;
+      text-align: center;
+      margin-top: 26px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="header-badge">
+      <div class="dot"></div>
+      VERIFIED VIRAL APKS
+    </div>
+
+    <h1>Trending Games Center</h1>
+    <p class="tagline">Select your favorite game & click download to get instant APK.</p>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search game here..." onkeyup="filterGames()">
+    </div>
+
+    <div class="games-list" id="gamesList">
+
+      <!-- 1 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/PSKmQhp/Bajari-Mafia-Game.jpg" alt="Bajari Mafia" class="game-thumb">
+          <div class="game-meta">
+            <h3>Bajari Mafia Game 🔥</h3>
+            <p>Viral Reel Edition • Full APK</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 2 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/HL272VFc/Scorpio-Game.png" alt="Scorpio Game" class="game-thumb">
+          <div class="game-meta">
+            <h3>Scorpio Game 🎮🔥</h3>
+            <p>Indian Mafia Car 3D</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 3 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/mrzzrBrr/Indian-Truck-Game.jpg" alt="Indian Truck" class="game-thumb">
+          <div class="game-meta">
+            <h3>Indian Truck Game 🔥</h3>
+            <p>Heavy Driver Desi Simulator</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 4 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/sd4vRbY4/Viral-Truck-Game.jpg" alt="Viral Truck Game" class="game-thumb">
+          <div class="game-meta">
+            <h3>Viral Truck Game 🎮🔥</h3>
+            <p>Offroad Hill Climbing 3D</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 5 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/xKRJqqN0/Tractor-Game-Apk.jpg" alt="Tractor Game" class="game-thumb">
+          <div class="game-meta">
+            <h3>Tractor Game APK 🔥</h3>
+            <p>Desi Tochan & Farming 3D</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 6 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/TMvK6Spz/Indian-Bullet-Bike-Game.jpg" alt="Bullet Bike" class="game-thumb">
+          <div class="game-meta">
+            <h3>Indian Bullet Bike Game 🎮🔥</h3>
+            <p>Royal Enfield Rider Simulator</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 7 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/cSJ8LdqB/Indian-GTA.png" alt="Indian GTA" class="game-thumb">
+          <div class="game-meta">
+            <h3>Indian GTA Game 🔥</h3>
+            <p>Open World City Crime</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 8 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/MDZmBjBR/Indian-Gta-2.png" alt="Indian GTA 2" class="game-thumb">
+          <div class="game-meta">
+            <h3>Indian GTA 2 🎮🔥</h3>
+            <p>Bikes & Gangster Edition</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 9 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/B5v4TLKH/Gangster-Game.jpg" alt="Gangster Game" class="game-thumb">
+          <div class="game-meta">
+            <h3>Gangster Game 🔥</h3>
+            <p>Vegas Crime City Mafia</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 10 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/jZ8qBgXn/Car-Game-Mobile.jpg" alt="Car Game Mobile" class="game-thumb">
+          <div class="game-meta">
+            <h3>Car Game Mobile 🎮🔥</h3>
+            <p>High Speed Traffic Racer</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 11 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/dJpqWz7j/Realistic-Car-Game.jpg" alt="Realistic Car Game" class="game-thumb">
+          <div class="game-meta">
+            <h3>Realistic Car Game 🔥</h3>
+            <p>Manual Driving & Drifting</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 12 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/9HKBk4gh/Real-Car-Game-Mobile.jpg" alt="Real Car Game" class="game-thumb">
+          <div class="game-meta">
+            <h3>Real Car Game Mobile 🎮🔥</h3>
+            <p>Extreme City Simulator</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 13 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/Ld0PZ0F0/Viral-BMW-Game.jpg" alt="Viral BMW Game" class="game-thumb">
+          <div class="game-meta">
+            <h3>Viral BMW Game 🔥</h3>
+            <p>M5 Drift Challenge 3D</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 14 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/b5rb2Nbx/Real-Life-Simulator-Game.jpg" alt="Real Life Simulator" class="game-thumb">
+          <div class="game-meta">
+            <h3>Real Life Simulator Game 🎮🔥</h3>
+            <p>Life & Business RP</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 15 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/1f9s5RVK/Motu-Patlu-Game.png" alt="Motu Patlu Game" class="game-thumb">
+          <div class="game-meta">
+            <h3>Motu Patlu Game 🔥</h3>
+            <p>Furfuri Nagar Racing Adventure</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 16 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/QvC62KSw/Indian-Train-Game.png" alt="Indian Train Game" class="game-thumb">
+          <div class="game-meta">
+            <h3>Indian Train Game 🎮🔥</h3>
+            <p>Express Railway Simulator 3D</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+      <!-- 17 -->
+      <div class="game-card">
+        <div class="game-left">
+          <img src="https://i.ibb.co/Mk4zxXpg/President-Game.png" alt="President Game" class="game-thumb">
+          <div class="game-meta">
+            <h3>President Game 🔥</h3>
+            <p>VIP Security Convoy 3D</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <a href="https://terasharefile.com/s/1Z0z_xx4_1U_ffkiyRLA5Ow" class="btn-download">Download</a>
+      </div>
+
+    </div>
+
+    <div class="footer-note">All games are property of their respective creators.</div>
+  </div>
+
+  <script>
+    function filterGames() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.game-card');
+
+      cards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const desc = card.querySelector('p').textContent.toLowerCase();
+        if (title.includes(input) || desc.includes(input)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
